@@ -1,0 +1,61 @@
+# Project: 墩墩交易
+# Makefile created by Dev-C++ 5.6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = calculate.o control.o user.o sql.o sqlcl.o admin.o seller.o buyer.o information.o calculatefz.o calculatefz2.o chatting.o
+LINKOBJ  = calculate.o control.o user.o sql.o sqlcl.o admin.o seller.o buyer.o information.o calculatefz.o calculatefz2.o chatting.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = 墩墩交易.exe
+CXXFLAGS = $(CXXINCS) -g3 -std=c99
+CFLAGS   = $(INCS) -g3 -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+calculate.o: calculate.cpp
+	$(CPP) -c calculate.cpp -o calculate.o $(CXXFLAGS)
+
+control.o: control.cpp
+	$(CPP) -c control.cpp -o control.o $(CXXFLAGS)
+
+user.o: user.cpp
+	$(CPP) -c user.cpp -o user.o $(CXXFLAGS)
+
+sql.o: sql.cpp
+	$(CPP) -c sql.cpp -o sql.o $(CXXFLAGS)
+
+sqlcl.o: sqlcl.cpp
+	$(CPP) -c sqlcl.cpp -o sqlcl.o $(CXXFLAGS)
+
+admin.o: admin.cpp
+	$(CPP) -c admin.cpp -o admin.o $(CXXFLAGS)
+
+seller.o: seller.cpp
+	$(CPP) -c seller.cpp -o seller.o $(CXXFLAGS)
+
+buyer.o: buyer.cpp
+	$(CPP) -c buyer.cpp -o buyer.o $(CXXFLAGS)
+
+information.o: information.cpp
+	$(CPP) -c information.cpp -o information.o $(CXXFLAGS)
+
+calculatefz.o: calculatefz.cpp
+	$(CPP) -c calculatefz.cpp -o calculatefz.o $(CXXFLAGS)
+
+calculatefz2.o: calculatefz2.cpp
+	$(CPP) -c calculatefz2.cpp -o calculatefz2.o $(CXXFLAGS)
+
+chatting.o: chatting.cpp
+	$(CPP) -c chatting.cpp -o chatting.o $(CXXFLAGS)
